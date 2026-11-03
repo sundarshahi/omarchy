@@ -19,7 +19,7 @@ for command in omarchy-update omarchy-update-lock omarchy-update-stay-awake; do
 done
 sed -i \
   -e "s/omarchy-update\.lock/$update_lock_name/g" \
-  -e "s#/tmp/omarchy-update\.log#$test_tmp/omarchy-update.log#" \
+  -e "s#\$XDG_RUNTIME_DIR/omarchy-update\.log#$test_tmp/omarchy-update.log#" \
   -e "s#state_dir=\"\$state_base/omarchy-update-stay-awake\"#state_dir=\"\$state_base/$stay_awake_dir_name\"#" \
   "$SUDO_TEST_ROOT/bin/omarchy-update" \
   "$SUDO_TEST_ROOT/bin/omarchy-update-lock" \
